@@ -1,17 +1,25 @@
 :root {
-  --bg: #FAFAF8;
+  --bg: #F7F7F5;
   --panel: #FFFFFF;
-  --ink: #111111;
-  --ink-soft: #5B5B58;
+  --ink: #0B0B0C;
+  --ink-soft: #6A6A66;
   --line: #E4E3DE;
-  --buyer: #E5484D;
-  --buyer-soft: #FBE4E4;
-  --seller: #00A63E;
-  --seller-soft: #DFF6E6;
+  --line-strong: #D3D2CB;
+  --buyer: #D92B36;
+  --buyer-deep: #A3121C;
+  --buyer-soft: #FDE8E8;
+  --seller: #0E9F5A;
+  --seller-deep: #06663A;
+  --seller-soft: #DDF5E8;
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
   --radius: 10px;
+  --shadow-sm: 0 1px 2px rgba(11,11,12,0.05);
+  --shadow-md: 0 6px 18px -8px rgba(11,11,12,0.22);
+  --shadow-lg: 0 18px 40px -18px rgba(11,11,12,0.32);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
+
 
 * { box-sizing: border-box; }
 
