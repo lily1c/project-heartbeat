@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Blind Bazaar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="app">
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <div>
+        <h1>Blind Bazaar</h1>
+        <p>One advertiser, blind publishers, Midnight-verified fair auctions.</p>
+      </div>
+    </div>
+
+    <div class="modes" id="modes" role="group" aria-label="Auction mode">
+      <button class="mode-pill active" data-mode="1v1" data-sellers="1">1 advertiser · 1 publisher</button>
+      <button class="mode-pill" data-mode="1v2" data-sellers="2">1 advertiser · 2 publishers</button>
+      <button class="mode-pill disabled" data-mode="soon" disabled>Multi-publisher — soon</button>
+    </div>
+
+    <button id="launch" class="launch-btn">Launch auction</button>
+  </header>
+
+  <div class="brief-row">
+    <input id="campaign-brief" type="text" placeholder="Optional: describe the campaign (e.g. &quot;sneaker launch, Gen Z audience, video inventory&quot;)" />
+  </div>
+
+  <main class="stage">
+
+    <aside class="legend" id="legend">
+      <div class="side-tabs">
+        <button class="side-tab active" id="tab-agents">Agents</button>
+        <button class="side-tab" id="tab-sessions">Sessions</button>
+      </div>
+
+      <div class="agent-list" id="agent-list">
+        <p class="empty-note">Launch an auction to see who's bidding.</p>
+      </div>
+
+      <div class="sessions-list" id="sessions-list" style="display:none">
+        <p class="empty-note" id="sessions-empty">No past runs yet.</p>
+      </div>
+    </aside>
+
+    <section class="activity-panel">
+      <div class="imessage-header">
+        <div class="group-avatar-stack" id="group-avatar-stack" aria-hidden="true"></div>
+        <div class="chat-name" id="chat-name">Auction chat</div>
+        <span class="live-dot" id="live-dot" aria-hidden="true"></span>
+      </div>
+      <div class="progress-bar" id="progress-bar"><div class="progress-fill"></div></div>
+      <div class="bubble-stage" id="bubble-stage">
+        <p class="empty-note" id="activity-empty">Launch an auction to watch the bidding live.</p>
+        <div class="bubble-chat" id="bubble-chat"></div>
+      </div>
+    </section>
+
+    <aside class="chat-panel">
+      <h2>Full transcript</h2>
+      <div class="chat-log" id="chat">
+        <p class="empty-note">No auction running yet.</p>
+      </div>
+    </aside>
+
+  </main>
+
+  <section class="midnight-block">
+    <div class="midnight-icon" aria-hidden="true"></div>
+    <div class="midnight-block-body">
+      <div class="midnight-text">
+        <h3>Midnight verification</h3>
+        <p>The advertiser's budget, publisher's floor price, and delivered quality are private witnesses to the Midnight contract \u2014 the chain sees a proof and a pass/fail verdict, not the numbers themselves.</p>
+      </div>
+
+      <div class="mn-flow" id="mn-flow" data-state="idle">
+        <div class="mn-flow-node" data-node="app">
+          <div class="mn-flow-icon mn-icon-app"></div>
+          <span class="mn-flow-label">App server</span>
+        </div>
+        <div class="mn-flow-line"></div>
+        <div class="mn-flow-node" data-node="wallet">
+          <div class="mn-flow-icon mn-icon-wallet"></div>
+          <span class="mn-flow-label">Wallet</span>
+        </div>
+        <div class="mn-flow-line"></div>
+        <div class="mn-flow-node" data-node="proof">
+          <div class="mn-flow-icon mn-icon-proof"></div>
+          <span class="mn-flow-label">Proof server</span>
+        </div>
+        <div class="mn-flow-line"></div>
+        <div class="mn-flow-node" data-node="contract">
+          <div class="mn-flow-icon mn-icon-contract"></div>
+          <span class="mn-flow-label">Midnight contract</span>
+        </div>
+      </div>
+
+      <div class="midnight-results" id="midnight-results"></div>
+    </div>
+  </section>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
